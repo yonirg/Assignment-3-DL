@@ -1,0 +1,10 @@
+/Users/yoni.rg/repos/PA3 - DL/pa3/train_sup.py:66: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:214.)
+  yva_t = torch.from_numpy(yva)
+  [resnet18 s0] ep   1 perda_tr 3.051 acc_tr 0.00 perda_val 3.006 f1_val 0.066
+  [resnet18 s0] ep  10 perda_tr 0.044 acc_tr 1.00 perda_val 2.836 f1_val 0.154
+  [resnet18 s0] ep  20 perda_tr 0.007 acc_tr 1.00 perda_val 3.013 f1_val 0.201
+  [resnet18 s0] ep  30 perda_tr 0.004 acc_tr 1.00 perda_val 3.089 f1_val 0.186
+  [resnet18 s0] ep  40 perda_tr 0.003 acc_tr 1.00 perda_val 3.110 f1_val 0.187
+  [resnet18 s0] ep  50 perda_tr 0.004 acc_tr 1.00 perda_val 3.117 f1_val 0.182
+  [resnet18 s0] ep  60 perda_tr 0.003 acc_tr 1.00 perda_val 3.121 f1_val 0.178
+{'modelo': 'resnet18', 'seed': 0, 'epoca_escolhida': 13, 'epoca_min_perda_val': 8, 'f1_val': 0.21105453306786848, 'acc_val': 0.19801980198019803, 'test_f1_macro': 0.235353561934497, 'test_acuracia': 0.25030826140567203, 'n_parametros': 11187285, 'segundos': 23.39681100845337}

@@ -1,0 +1,1092 @@
+{
+  "conferencia_professor": {
+    "zs_recalculado": 0.37460054948464744,
+    "zs_registrado": 0.37460054948464744,
+    "mel1_recalculado": 0.38010067917020296,
+    "mel5_recalculado": 0.5379335798236556,
+    "mel20_recalculado": 0.6646177437680464,
+    "mel1_registrado": 0.38010067917020296,
+    "mel5_registrado": 0.5379335798236556,
+    "mel20_registrado": 0.6646177437680464
+  },
+  "reprodutibilidade_piso_r5": [
+    {
+      "seed": 0,
+      "f1_val_etapa1": 0.41466944752432705,
+      "f1_val_rerun": 0.41466944752432705,
+      "test_etapa1": 0.45196692685469353,
+      "test_rerun": 0.45196692685469353
+    },
+    {
+      "seed": 1,
+      "f1_val_etapa1": 0.37309219664353016,
+      "f1_val_rerun": 0.37309219664353016,
+      "test_etapa1": 0.42522940546593413,
+      "test_rerun": 0.42522940546593413
+    },
+    {
+      "seed": 2,
+      "f1_val_etapa1": 0.41922163477494834,
+      "f1_val_rerun": 0.41922163477494834,
+      "test_etapa1": 0.44077679364882916,
+      "test_rerun": 0.44077679364882916
+    }
+  ],
+  "curva": {
+    "piso_b_resnet18": {
+      "1": {
+        "f1_media": 0.235353561934497,
+        "f1_desvio": 0.0,
+        "acc_media": 0.25030826140567203,
+        "acc_desvio": 0.0,
+        "n": 1
+      },
+      "5": {
+        "f1_media": 0.4393243753231523,
+        "f1_desvio": 0.010963755492474987,
+        "acc_media": 0.45951500205507606,
+        "acc_desvio": 0.01801916170717878,
+        "n": 3
+      },
+      "20": {
+        "f1_media": 0.6247319169794294,
+        "f1_desvio": 0.0,
+        "acc_media": 0.6683107274969173,
+        "acc_desvio": 0.0,
+        "n": 1
+      }
+    },
+    "aluno_B": {
+      "1": {
+        "f1_media": 0.4167321903278254,
+        "f1_desvio": 0.0,
+        "acc_media": 0.5228113440197287,
+        "acc_desvio": 0.0,
+        "n": 1
+      },
+      "5": {
+        "f1_media": 0.48014160228659114,
+        "f1_desvio": 0.01731197700467254,
+        "acc_media": 0.5602137279079326,
+        "acc_desvio": 0.012787792179288174,
+        "n": 3
+      },
+      "20": {
+        "f1_media": 0.5718725249711897,
+        "f1_desvio": 0.0,
+        "acc_media": 0.6078914919852034,
+        "acc_desvio": 0.0,
+        "n": 1
+      }
+    },
+    "professor_zero_shot": {
+      "1": {
+        "f1_media": 0.37460054948464744,
+        "f1_desvio": 0.0,
+        "acc_media": 0.4118372379778052,
+        "acc_desvio": 0.0,
+        "n": 1
+      },
+      "5": {
+        "f1_media": 0.37460054948464744,
+        "f1_desvio": 0.0,
+        "acc_media": 0.4118372379778052,
+        "acc_desvio": 0.0,
+        "n": 1
+      },
+      "20": {
+        "f1_media": 0.37460054948464744,
+        "f1_desvio": 0.0,
+        "acc_media": 0.4118372379778052,
+        "acc_desvio": 0.0,
+        "n": 1
+      }
+    },
+    "professor_melhorado": {
+      "1": {
+        "f1_media": 0.38010067917020296,
+        "f1_desvio": 0.0,
+        "acc_media": 0.41800246609124536,
+        "acc_desvio": 0.0,
+        "n": 1
+      },
+      "5": {
+        "f1_media": 0.5379335798236556,
+        "f1_desvio": 0.0,
+        "acc_media": 0.5770653514180024,
+        "acc_desvio": 0.0,
+        "n": 1
+      },
+      "20": {
+        "f1_media": 0.6646177437680464,
+        "f1_desvio": 0.0,
+        "acc_media": 0.6942046855733662,
+        "acc_desvio": 0.0,
+        "n": 1
+      }
+    }
+  },
+  "conferencia_logits": {
+    "aluno": [
+      [
+        0.46985640170206994,
+        0.46985640170206994
+      ],
+      [
+        0.4660431576899276,
+        0.4660431576899276
+      ],
+      [
+        0.5045252474677757,
+        0.5045252474677757
+      ]
+    ],
+    "piso": [
+      [
+        0.45196692685469353,
+        0.45196692685469353
+      ],
+      [
+        0.42522940546593413,
+        0.42522940546593413
+      ],
+      [
+        0.44077679364882916,
+        0.44077679364882916
+      ]
+    ]
+  },
+  "por_classe_r5": [
+    {
+      "classe": "american_black_bear",
+      "suporte": 82,
+      "f1_piso": 0.4836,
+      "f1_aluno": 0.8199,
+      "f1_prof_zs": 0.7832,
+      "f1_prof_melhorado5": 0.7368,
+      "ganho_aluno_menos_piso": 0.3362,
+      "aluno_menos_zs": 0.0367,
+      "aluno_menos_melhorado": 0.083
+    },
+    {
+      "classe": "american_crow",
+      "suporte": 63,
+      "f1_piso": 0.2858,
+      "f1_aluno": 0.7966,
+      "f1_prof_zs": 0.4808,
+      "f1_prof_melhorado5": 0.6604,
+      "ganho_aluno_menos_piso": 0.5108,
+      "aluno_menos_zs": 0.3158,
+      "aluno_menos_melhorado": 0.1362
+    },
+    {
+      "classe": "bird",
+      "suporte": 22,
+      "f1_piso": 0.1187,
+      "f1_aluno": 0.0918,
+      "f1_prof_zs": 0.3333,
+      "f1_prof_melhorado5": 0.303,
+      "ganho_aluno_menos_piso": -0.0269,
+      "aluno_menos_zs": -0.2415,
+      "aluno_menos_melhorado": -0.2112
+    },
+    {
+      "classe": "bobcat",
+      "suporte": 34,
+      "f1_piso": 0.1537,
+      "f1_aluno": 0.1532,
+      "f1_prof_zs": 0.1782,
+      "f1_prof_melhorado5": 0.15,
+      "ganho_aluno_menos_piso": -0.0006,
+      "aluno_menos_zs": -0.025,
+      "aluno_menos_melhorado": 0.0032
+    },
+    {
+      "classe": "chicken",
+      "suporte": 60,
+      "f1_piso": 0.5923,
+      "f1_aluno": 0.7862,
+      "f1_prof_zs": 0.6275,
+      "f1_prof_melhorado5": 0.7385,
+      "ganho_aluno_menos_piso": 0.194,
+      "aluno_menos_zs": 0.1588,
+      "aluno_menos_melhorado": 0.0478
+    },
+    {
+      "classe": "coyote",
+      "suporte": 31,
+      "f1_piso": 0.4383,
+      "f1_aluno": 0.5916,
+      "f1_prof_zs": 0.4884,
+      "f1_prof_melhorado5": 0.5517,
+      "ganho_aluno_menos_piso": 0.1533,
+      "aluno_menos_zs": 0.1032,
+      "aluno_menos_melhorado": 0.0399
+    },
+    {
+      "classe": "dog",
+      "suporte": 67,
+      "f1_piso": 0.6355,
+      "f1_aluno": 0.5844,
+      "f1_prof_zs": 0.1053,
+      "f1_prof_melhorado5": 0.65,
+      "ganho_aluno_menos_piso": -0.0511,
+      "aluno_menos_zs": 0.4791,
+      "aluno_menos_melhorado": -0.0656
+    },
+    {
+      "classe": "domestic_cat",
+      "suporte": 48,
+      "f1_piso": 0.238,
+      "f1_aluno": 0.0,
+      "f1_prof_zs": 0.0,
+      "f1_prof_melhorado5": 0.1639,
+      "ganho_aluno_menos_piso": -0.238,
+      "aluno_menos_zs": 0.0,
+      "aluno_menos_melhorado": -0.1639
+    },
+    {
+      "classe": "eastern_chipmunk",
+      "suporte": 31,
+      "f1_piso": 0.9513,
+      "f1_aluno": 0.7641,
+      "f1_prof_zs": 0.2222,
+      "f1_prof_melhorado5": 0.9667,
+      "ganho_aluno_menos_piso": -0.1872,
+      "aluno_menos_zs": 0.5419,
+      "aluno_menos_melhorado": -0.2026
+    },
+    {
+      "classe": "eastern_cottontail",
+      "suporte": 26,
+      "f1_piso": 0.0589,
+      "f1_aluno": 0.1609,
+      "f1_prof_zs": 0.303,
+      "f1_prof_melhorado5": 0.6944,
+      "ganho_aluno_menos_piso": 0.102,
+      "aluno_menos_zs": -0.1421,
+      "aluno_menos_melhorado": -0.5335
+    },
+    {
+      "classe": "eastern_fox_squirrel",
+      "suporte": 32,
+      "f1_piso": 0.4008,
+      "f1_aluno": 0.3003,
+      "f1_prof_zs": 0.3836,
+      "f1_prof_melhorado5": 0.5882,
+      "ganho_aluno_menos_piso": -0.1005,
+      "aluno_menos_zs": -0.0833,
+      "aluno_menos_melhorado": -0.288
+    },
+    {
+      "classe": "eastern_gray_squirrel",
+      "suporte": 34,
+      "f1_piso": 0.797,
+      "f1_aluno": 0.8954,
+      "f1_prof_zs": 0.72,
+      "f1_prof_melhorado5": 0.5926,
+      "ganho_aluno_menos_piso": 0.0984,
+      "aluno_menos_zs": 0.1754,
+      "aluno_menos_melhorado": 0.3028
+    },
+    {
+      "classe": "grey_fox",
+      "suporte": 39,
+      "f1_piso": 0.3252,
+      "f1_aluno": 0.3236,
+      "f1_prof_zs": 0.2529,
+      "f1_prof_melhorado5": 0.1579,
+      "ganho_aluno_menos_piso": -0.0016,
+      "aluno_menos_zs": 0.0707,
+      "aluno_menos_melhorado": 0.1657
+    },
+    {
+      "classe": "horse",
+      "suporte": 4,
+      "f1_piso": 0.8222,
+      "f1_aluno": 0.5886,
+      "f1_prof_zs": 0.4615,
+      "f1_prof_melhorado5": 0.4286,
+      "ganho_aluno_menos_piso": -0.2336,
+      "aluno_menos_zs": 0.1271,
+      "aluno_menos_melhorado": 0.1601
+    },
+    {
+      "classe": "northern_raccoon",
+      "suporte": 27,
+      "f1_piso": 0.268,
+      "f1_aluno": 0.289,
+      "f1_prof_zs": 0.2128,
+      "f1_prof_melhorado5": 0.5205,
+      "ganho_aluno_menos_piso": 0.021,
+      "aluno_menos_zs": 0.0762,
+      "aluno_menos_melhorado": -0.2315
+    },
+    {
+      "classe": "red_fox",
+      "suporte": 43,
+      "f1_piso": 0.3686,
+      "f1_aluno": 0.2712,
+      "f1_prof_zs": 0.2041,
+      "f1_prof_melhorado5": 0.303,
+      "ganho_aluno_menos_piso": -0.0974,
+      "aluno_menos_zs": 0.0671,
+      "aluno_menos_melhorado": -0.0318
+    },
+    {
+      "classe": "striped_skunk",
+      "suporte": 31,
+      "f1_piso": 0.3737,
+      "f1_aluno": 0.1199,
+      "f1_prof_zs": 0.1304,
+      "f1_prof_melhorado5": 0.4494,
+      "ganho_aluno_menos_piso": -0.2538,
+      "aluno_menos_zs": -0.0106,
+      "aluno_menos_melhorado": -0.3296
+    },
+    {
+      "classe": "virginia_opossum",
+      "suporte": 55,
+      "f1_piso": 0.816,
+      "f1_aluno": 0.8559,
+      "f1_prof_zs": 0.4892,
+      "f1_prof_melhorado5": 0.68,
+      "ganho_aluno_menos_piso": 0.0399,
+      "aluno_menos_zs": 0.3667,
+      "aluno_menos_melhorado": 0.1759
+    },
+    {
+      "classe": "white_tailed_deer",
+      "suporte": 33,
+      "f1_piso": 0.6208,
+      "f1_aluno": 0.6468,
+      "f1_prof_zs": 0.6458,
+      "f1_prof_melhorado5": 0.7606,
+      "ganho_aluno_menos_piso": 0.0259,
+      "aluno_menos_zs": 0.0009,
+      "aluno_menos_melhorado": -0.1138
+    },
+    {
+      "classe": "wild_turkey",
+      "suporte": 27,
+      "f1_piso": 0.2473,
+      "f1_aluno": 0.5698,
+      "f1_prof_zs": 0.597,
+      "f1_prof_melhorado5": 0.6471,
+      "ganho_aluno_menos_piso": 0.3226,
+      "aluno_menos_zs": -0.0272,
+      "aluno_menos_melhorado": -0.0772
+    },
+    {
+      "classe": "woodchuck",
+      "suporte": 22,
+      "f1_piso": 0.23,
+      "f1_aluno": 0.4739,
+      "f1_prof_zs": 0.2474,
+      "f1_prof_melhorado5": 0.5532,
+      "ganho_aluno_menos_piso": 0.2439,
+      "aluno_menos_zs": 0.2265,
+      "aluno_menos_melhorado": -0.0793
+    }
+  ],
+  "evidencia": {
+    "n_dia": 420,
+    "n_noite": 391,
+    "aluno_por_seed": {
+      "0": {
+        "dia": {
+          "f1_macro": 0.4768982234462195,
+          "acuracia": 0.6023809523809524,
+          "n_classes_na_media": 16
+        },
+        "noite": {
+          "f1_macro": 0.2871641591349584,
+          "acuracia": 0.4961636828644501,
+          "n_classes_na_media": 15
+        }
+      },
+      "1": {
+        "dia": {
+          "f1_macro": 0.47336057920379604,
+          "acuracia": 0.6,
+          "n_classes_na_media": 16
+        },
+        "noite": {
+          "f1_macro": 0.31820545213064794,
+          "acuracia": 0.49872122762148335,
+          "n_classes_na_media": 15
+        }
+      },
+      "2": {
+        "dia": {
+          "f1_macro": 0.538812154333058,
+          "acuracia": 0.6571428571428571,
+          "n_classes_na_media": 16
+        },
+        "noite": {
+          "f1_macro": 0.37781685765985257,
+          "acuracia": 0.4936061381074169,
+          "n_classes_na_media": 15
+        }
+      }
+    },
+    "piso_por_seed": {
+      "0": {
+        "dia": {
+          "f1_macro": 0.38821480493778693,
+          "acuracia": 0.5166666666666667,
+          "n_classes_na_media": 16
+        },
+        "noite": {
+          "f1_macro": 0.41549984398531686,
+          "acuracia": 0.4373401534526854,
+          "n_classes_na_media": 15
+        }
+      },
+      "1": {
+        "dia": {
+          "f1_macro": 0.4387481016364232,
+          "acuracia": 0.4928571428571429,
+          "n_classes_na_media": 16
+        },
+        "noite": {
+          "f1_macro": 0.3206177729924447,
+          "acuracia": 0.3734015345268542,
+          "n_classes_na_media": 15
+        }
+      },
+      "2": {
+        "dia": {
+          "f1_macro": 0.4013472443634453,
+          "acuracia": 0.5047619047619047,
+          "n_classes_na_media": 16
+        },
+        "noite": {
+          "f1_macro": 0.3576251675721946,
+          "acuracia": 0.4219948849104859,
+          "n_classes_na_media": 15
+        }
+      }
+    },
+    "prof_zs": {
+      "dia": {
+        "f1_macro": 0.42954006202534256,
+        "acuracia": 0.42857142857142855,
+        "n_classes_na_media": 16
+      },
+      "noite": {
+        "f1_macro": 0.2915379213567666,
+        "acuracia": 0.3938618925831202,
+        "n_classes_na_media": 15
+      }
+    },
+    "prof_melhorado5": {
+      "dia": {
+        "f1_macro": 0.551840959828178,
+        "acuracia": 0.6619047619047619,
+        "n_classes_na_media": 16
+      },
+      "noite": {
+        "f1_macro": 0.40902246414642,
+        "acuracia": 0.4859335038363171,
+        "n_classes_na_media": 15
+      }
+    },
+    "aluno_dia_f1_media": 0.49635698566102454,
+    "aluno_dia_acc_media": 0.6198412698412699,
+    "piso_dia_f1_media": 0.4094367169792185,
+    "piso_dia_acc_media": 0.5047619047619047,
+    "aluno_noite_f1_media": 0.327728822975153,
+    "aluno_noite_acc_media": 0.49616368286445006,
+    "piso_noite_f1_media": 0.3645809281833187,
+    "piso_noite_acc_media": 0.4109121909633418,
+    "recall_por_classe_turno": [
+      {
+        "classe": "american_black_bear",
+        "turno": "dia",
+        "n": 34,
+        "recall_aluno": 0.8333333333333334,
+        "recall_piso": 0.5882352941176471,
+        "recall_zs": 0.7352941176470589,
+        "recall_mel5": 0.7647058823529411
+      },
+      {
+        "classe": "american_black_bear",
+        "turno": "noite",
+        "n": 48,
+        "recall_aluno": 0.8055555555555555,
+        "recall_piso": 0.1875,
+        "recall_zs": 0.6458333333333334,
+        "recall_mel5": 0.4791666666666667
+      },
+      {
+        "classe": "american_crow",
+        "turno": "dia",
+        "n": 63,
+        "recall_aluno": 0.7830687830687829,
+        "recall_piso": 0.19047619047619047,
+        "recall_zs": 0.3968253968253968,
+        "recall_mel5": 0.5555555555555556
+      },
+      {
+        "classe": "bird",
+        "turno": "dia",
+        "n": 15,
+        "recall_aluno": 0.11111111111111112,
+        "recall_piso": 0.20000000000000004,
+        "recall_zs": 0.3333333333333333,
+        "recall_mel5": 0.3333333333333333
+      },
+      {
+        "classe": "bird",
+        "turno": "noite",
+        "n": 7,
+        "recall_aluno": 0.0,
+        "recall_piso": 0.0,
+        "recall_zs": 0.0,
+        "recall_mel5": 0.0
+      },
+      {
+        "classe": "bobcat",
+        "turno": "dia",
+        "n": 13,
+        "recall_aluno": 0.07692307692307693,
+        "recall_piso": 0.07692307692307693,
+        "recall_zs": 0.15384615384615385,
+        "recall_mel5": 0.0
+      },
+      {
+        "classe": "bobcat",
+        "turno": "noite",
+        "n": 21,
+        "recall_aluno": 0.23809523809523805,
+        "recall_piso": 0.15873015873015872,
+        "recall_zs": 0.3333333333333333,
+        "recall_mel5": 0.14285714285714285
+      },
+      {
+        "classe": "chicken",
+        "turno": "dia",
+        "n": 60,
+        "recall_aluno": 0.7777777777777777,
+        "recall_piso": 0.5388888888888889,
+        "recall_zs": 0.5333333333333333,
+        "recall_mel5": 0.8
+      },
+      {
+        "classe": "coyote",
+        "turno": "noite",
+        "n": 31,
+        "recall_aluno": 0.978494623655914,
+        "recall_piso": 0.6774193548387096,
+        "recall_zs": 0.6774193548387096,
+        "recall_mel5": 0.7741935483870968
+      },
+      {
+        "classe": "dog",
+        "turno": "dia",
+        "n": 56,
+        "recall_aluno": 0.49404761904761907,
+        "recall_piso": 0.8571428571428572,
+        "recall_zs": 0.07142857142857142,
+        "recall_mel5": 0.6964285714285714
+      },
+      {
+        "classe": "dog",
+        "turno": "noite",
+        "n": 11,
+        "recall_aluno": 0.0,
+        "recall_piso": 0.15151515151515152,
+        "recall_zs": 0.0,
+        "recall_mel5": 0.0
+      },
+      {
+        "classe": "domestic_cat",
+        "turno": "dia",
+        "n": 17,
+        "recall_aluno": 0.0,
+        "recall_piso": 0.0,
+        "recall_zs": 0.0,
+        "recall_mel5": 0.23529411764705882
+      },
+      {
+        "classe": "domestic_cat",
+        "turno": "noite",
+        "n": 31,
+        "recall_aluno": 0.0,
+        "recall_piso": 0.23655913978494625,
+        "recall_zs": 0.0,
+        "recall_mel5": 0.03225806451612903
+      },
+      {
+        "classe": "eastern_chipmunk",
+        "turno": "dia",
+        "n": 30,
+        "recall_aluno": 0.6555555555555556,
+        "recall_piso": 0.9333333333333332,
+        "recall_zs": 0.23333333333333334,
+        "recall_mel5": 0.9333333333333333
+      },
+      {
+        "classe": "eastern_chipmunk",
+        "turno": "noite",
+        "n": 1,
+        "recall_aluno": 0.3333333333333333,
+        "recall_piso": 1.0,
+        "recall_zs": 0.0,
+        "recall_mel5": 1.0
+      },
+      {
+        "classe": "eastern_cottontail",
+        "turno": "noite",
+        "n": 26,
+        "recall_aluno": 0.1794871794871795,
+        "recall_piso": 0.06410256410256411,
+        "recall_zs": 0.19230769230769232,
+        "recall_mel5": 0.9615384615384616
+      },
+      {
+        "classe": "eastern_fox_squirrel",
+        "turno": "dia",
+        "n": 32,
+        "recall_aluno": 0.3645833333333333,
+        "recall_piso": 0.3645833333333333,
+        "recall_zs": 0.4375,
+        "recall_mel5": 0.625
+      },
+      {
+        "classe": "eastern_gray_squirrel",
+        "turno": "dia",
+        "n": 32,
+        "recall_aluno": 1.0,
+        "recall_piso": 1.0,
+        "recall_zs": 0.78125,
+        "recall_mel5": 1.0
+      },
+      {
+        "classe": "eastern_gray_squirrel",
+        "turno": "noite",
+        "n": 2,
+        "recall_aluno": 0.0,
+        "recall_piso": 0.0,
+        "recall_zs": 1.0,
+        "recall_mel5": 0.0
+      },
+      {
+        "classe": "grey_fox",
+        "turno": "dia",
+        "n": 5,
+        "recall_aluno": 0.0,
+        "recall_piso": 0.3333333333333333,
+        "recall_zs": 0.2,
+        "recall_mel5": 0.2
+      },
+      {
+        "classe": "grey_fox",
+        "turno": "noite",
+        "n": 34,
+        "recall_aluno": 0.37254901960784315,
+        "recall_piso": 0.29411764705882354,
+        "recall_zs": 0.29411764705882354,
+        "recall_mel5": 0.14705882352941177
+      },
+      {
+        "classe": "horse",
+        "turno": "dia",
+        "n": 4,
+        "recall_aluno": 0.75,
+        "recall_piso": 1.0,
+        "recall_zs": 0.75,
+        "recall_mel5": 0.75
+      },
+      {
+        "classe": "northern_raccoon",
+        "turno": "dia",
+        "n": 5,
+        "recall_aluno": 0.0,
+        "recall_piso": 0.0,
+        "recall_zs": 0.0,
+        "recall_mel5": 0.0
+      },
+      {
+        "classe": "northern_raccoon",
+        "turno": "noite",
+        "n": 22,
+        "recall_aluno": 0.37878787878787873,
+        "recall_piso": 0.30303030303030304,
+        "recall_zs": 0.45454545454545453,
+        "recall_mel5": 0.8636363636363636
+      },
+      {
+        "classe": "red_fox",
+        "turno": "dia",
+        "n": 5,
+        "recall_aluno": 0.6,
+        "recall_piso": 0.0,
+        "recall_zs": 1.0,
+        "recall_mel5": 0.4
+      },
+      {
+        "classe": "red_fox",
+        "turno": "noite",
+        "n": 38,
+        "recall_aluno": 0.12280701754385964,
+        "recall_piso": 0.3245614035087719,
+        "recall_zs": 0.0,
+        "recall_mel5": 0.21052631578947367
+      },
+      {
+        "classe": "striped_skunk",
+        "turno": "noite",
+        "n": 31,
+        "recall_aluno": 0.10752688172043011,
+        "recall_piso": 0.5913978494623655,
+        "recall_zs": 0.0967741935483871,
+        "recall_mel5": 0.6451612903225806
+      },
+      {
+        "classe": "virginia_opossum",
+        "turno": "noite",
+        "n": 55,
+        "recall_aluno": 0.9696969696969697,
+        "recall_piso": 0.7818181818181819,
+        "recall_zs": 0.6181818181818182,
+        "recall_mel5": 0.6181818181818182
+      },
+      {
+        "classe": "white_tailed_deer",
+        "turno": "noite",
+        "n": 33,
+        "recall_aluno": 0.98989898989899,
+        "recall_piso": 0.7676767676767676,
+        "recall_zs": 0.9393939393939394,
+        "recall_mel5": 0.8181818181818182
+      },
+      {
+        "classe": "wild_turkey",
+        "turno": "dia",
+        "n": 27,
+        "recall_aluno": 0.9382716049382717,
+        "recall_piso": 0.3209876543209877,
+        "recall_zs": 0.7407407407407407,
+        "recall_mel5": 0.8148148148148148
+      },
+      {
+        "classe": "woodchuck",
+        "turno": "dia",
+        "n": 22,
+        "recall_aluno": 0.5,
+        "recall_piso": 0.43939393939393945,
+        "recall_zs": 0.5454545454545454,
+        "recall_mel5": 0.5909090909090909
+      }
+    ],
+    "discordancia_aluno_zs": [
+      {
+        "seed": 0,
+        "turno": "dia",
+        "n": 420,
+        "discordam": 237,
+        "so_aluno_acerta": 106,
+        "so_prof_zs_acerta": 33
+      },
+      {
+        "seed": 0,
+        "turno": "noite",
+        "n": 391,
+        "discordam": 237,
+        "so_aluno_acerta": 75,
+        "so_prof_zs_acerta": 35
+      },
+      {
+        "seed": 0,
+        "turno": "tudo",
+        "n": 811,
+        "discordam": 474,
+        "so_aluno_acerta": 181,
+        "so_prof_zs_acerta": 68
+      },
+      {
+        "seed": 1,
+        "turno": "dia",
+        "n": 420,
+        "discordam": 244,
+        "so_aluno_acerta": 111,
+        "so_prof_zs_acerta": 39
+      },
+      {
+        "seed": 1,
+        "turno": "noite",
+        "n": 391,
+        "discordam": 234,
+        "so_aluno_acerta": 80,
+        "so_prof_zs_acerta": 39
+      },
+      {
+        "seed": 1,
+        "turno": "tudo",
+        "n": 811,
+        "discordam": 478,
+        "so_aluno_acerta": 191,
+        "so_prof_zs_acerta": 78
+      },
+      {
+        "seed": 2,
+        "turno": "dia",
+        "n": 420,
+        "discordam": 258,
+        "so_aluno_acerta": 135,
+        "so_prof_zs_acerta": 39
+      },
+      {
+        "seed": 2,
+        "turno": "noite",
+        "n": 391,
+        "discordam": 243,
+        "so_aluno_acerta": 75,
+        "so_prof_zs_acerta": 36
+      },
+      {
+        "seed": 2,
+        "turno": "tudo",
+        "n": 811,
+        "discordam": 501,
+        "so_aluno_acerta": 210,
+        "so_prof_zs_acerta": 75
+      }
+    ],
+    "previsoes_por_classe": {
+      "suporte": {
+        "american_black_bear": 82,
+        "american_crow": 63,
+        "bird": 22,
+        "bobcat": 34,
+        "chicken": 60,
+        "coyote": 31,
+        "dog": 67,
+        "domestic_cat": 48,
+        "eastern_chipmunk": 31,
+        "eastern_cottontail": 26,
+        "eastern_fox_squirrel": 32,
+        "eastern_gray_squirrel": 34,
+        "grey_fox": 39,
+        "horse": 4,
+        "northern_raccoon": 27,
+        "red_fox": 43,
+        "striped_skunk": 31,
+        "virginia_opossum": 55,
+        "white_tailed_deer": 33,
+        "wild_turkey": 27,
+        "woodchuck": 22
+      },
+      "prof_zs": {
+        "american_black_bear": 61,
+        "american_crow": 41,
+        "bird": 8,
+        "bobcat": 67,
+        "chicken": 42,
+        "coyote": 55,
+        "dog": 9,
+        "domestic_cat": 0,
+        "eastern_chipmunk": 32,
+        "eastern_cottontail": 7,
+        "eastern_fox_squirrel": 41,
+        "eastern_gray_squirrel": 41,
+        "grey_fox": 48,
+        "horse": 9,
+        "northern_raccoon": 67,
+        "red_fox": 6,
+        "striped_skunk": 15,
+        "virginia_opossum": 84,
+        "white_tailed_deer": 63,
+        "wild_turkey": 40,
+        "woodchuck": 75
+      },
+      "prof_melhorado5": {
+        "american_black_bear": 51,
+        "american_crow": 43,
+        "bird": 11,
+        "bobcat": 6,
+        "chicken": 70,
+        "coyote": 56,
+        "dog": 53,
+        "domestic_cat": 13,
+        "eastern_chipmunk": 29,
+        "eastern_cottontail": 46,
+        "eastern_fox_squirrel": 36,
+        "eastern_gray_squirrel": 74,
+        "grey_fox": 37,
+        "horse": 10,
+        "northern_raccoon": 46,
+        "red_fox": 23,
+        "striped_skunk": 58,
+        "virginia_opossum": 45,
+        "white_tailed_deer": 38,
+        "wild_turkey": 41,
+        "woodchuck": 25
+      },
+      "aluno_media": {
+        "american_black_bear": 81.7,
+        "american_crow": 59.0,
+        "bird": 12.0,
+        "bobcat": 40.3,
+        "chicken": 58.3,
+        "coyote": 77.3,
+        "dog": 27.7,
+        "domestic_cat": 0.0,
+        "eastern_chipmunk": 20.0,
+        "eastern_cottontail": 16.3,
+        "eastern_fox_squirrel": 47.0,
+        "eastern_gray_squirrel": 37.7,
+        "grey_fox": 43.3,
+        "horse": 7.0,
+        "northern_raccoon": 23.0,
+        "red_fox": 14.0,
+        "striped_skunk": 19.7,
+        "virginia_opossum": 70.7,
+        "white_tailed_deer": 69.3,
+        "wild_turkey": 62.7,
+        "woodchuck": 24.0
+      }
+    },
+    "concordancia_aluno_com_seu_professor_test": 0.4027949034114262,
+    "filtro_zs_test": {
+      "tau": 0.5,
+      "cobertura": 0.31689272503082616,
+      "precisao_passa": 0.7470817120622568,
+      "precisao_nao_passa": 0.2563176895306859,
+      "cobertura_dia": 0.2785714285714286,
+      "precisao_passa_dia": 0.7692307692307693,
+      "cobertura_noite": 0.35805626598465473,
+      "precisao_passa_noite": 0.7285714285714285,
+      "por_classe_prevista": {
+        "american_black_bear": {
+          "n_prev": 61,
+          "n_prev_passa": 49,
+          "precisao_todas": 0.9180327868852459,
+          "precisao_passa": 0.9795918367346939
+        },
+        "american_crow": {
+          "n_prev": 41,
+          "n_prev_passa": 20,
+          "precisao_todas": 0.6097560975609756,
+          "precisao_passa": 0.95
+        },
+        "bird": {
+          "n_prev": 8,
+          "n_prev_passa": 0,
+          "precisao_todas": 0.625,
+          "precisao_passa": null
+        },
+        "bobcat": {
+          "n_prev": 67,
+          "n_prev_passa": 14,
+          "precisao_todas": 0.13432835820895522,
+          "precisao_passa": 0.5
+        },
+        "chicken": {
+          "n_prev": 42,
+          "n_prev_passa": 20,
+          "precisao_todas": 0.7619047619047619,
+          "precisao_passa": 0.7
+        },
+        "coyote": {
+          "n_prev": 55,
+          "n_prev_passa": 22,
+          "precisao_todas": 0.38181818181818183,
+          "precisao_passa": 0.5
+        },
+        "dog": {
+          "n_prev": 9,
+          "n_prev_passa": 0,
+          "precisao_todas": 0.4444444444444444,
+          "precisao_passa": null
+        },
+        "domestic_cat": {
+          "n_prev": 0,
+          "n_prev_passa": 0,
+          "precisao_todas": null,
+          "precisao_passa": null
+        },
+        "eastern_chipmunk": {
+          "n_prev": 32,
+          "n_prev_passa": 3,
+          "precisao_todas": 0.21875,
+          "precisao_passa": 0.0
+        },
+        "eastern_cottontail": {
+          "n_prev": 7,
+          "n_prev_passa": 0,
+          "precisao_todas": 0.7142857142857143,
+          "precisao_passa": null
+        },
+        "eastern_fox_squirrel": {
+          "n_prev": 41,
+          "n_prev_passa": 6,
+          "precisao_todas": 0.34146341463414637,
+          "precisao_passa": 0.3333333333333333
+        },
+        "eastern_gray_squirrel": {
+          "n_prev": 41,
+          "n_prev_passa": 0,
+          "precisao_todas": 0.6585365853658537,
+          "precisao_passa": null
+        },
+        "grey_fox": {
+          "n_prev": 48,
+          "n_prev_passa": 16,
+          "precisao_todas": 0.22916666666666666,
+          "precisao_passa": 0.125
+        },
+        "horse": {
+          "n_prev": 9,
+          "n_prev_passa": 6,
+          "precisao_todas": 0.3333333333333333,
+          "precisao_passa": 0.5
+        },
+        "northern_raccoon": {
+          "n_prev": 67,
+          "n_prev_passa": 7,
+          "precisao_todas": 0.14925373134328357,
+          "precisao_passa": 1.0
+        },
+        "red_fox": {
+          "n_prev": 6,
+          "n_prev_passa": 2,
+          "precisao_todas": 0.8333333333333334,
+          "precisao_passa": 1.0
+        },
+        "striped_skunk": {
+          "n_prev": 15,
+          "n_prev_passa": 3,
+          "precisao_todas": 0.2,
+          "precisao_passa": 0.6666666666666666
+        },
+        "virginia_opossum": {
+          "n_prev": 84,
+          "n_prev_passa": 28,
+          "precisao_todas": 0.40476190476190477,
+          "precisao_passa": 0.9642857142857143
+        },
+        "white_tailed_deer": {
+          "n_prev": 63,
+          "n_prev_passa": 30,
+          "precisao_todas": 0.49206349206349204,
+          "precisao_passa": 0.8666666666666667
+        },
+        "wild_turkey": {
+          "n_prev": 40,
+          "n_prev_passa": 22,
+          "precisao_todas": 0.5,
+          "precisao_passa": 0.9090909090909091
+        },
+        "woodchuck": {
+          "n_prev": 75,
+          "n_prev_passa": 9,
+          "precisao_todas": 0.16,
+          "precisao_passa": 0.2222222222222222
+        }
+      }
+    }
+  }
+}

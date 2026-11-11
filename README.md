@@ -21,6 +21,19 @@ uv pip install -r requirements.txt     # versões fixadas
 .venv/bin/python -m pa3.teacher                  # professor zero-shot e melhorado
 ```
 
+## Etapa 2 (comandos)
+
+```bash
+.venv/bin/python -m pa3.train_student tempo      # mede uma época do aluno
+.venv/bin/python -m pa3.train_student ablacao    # ablação do ruído A-E (orçamento 5, seed 0), escolha no val
+.venv/bin/python -m pa3.train_student metodo     # variante escolhida nos orçamentos 1, 5 (seeds 1, 2) e 20
+.venv/bin/python -m pa3.train_student entrega    # melhor seed no val -> weights/aluno_final.pt
+.venv/bin/python -m pa3.train_sup piso_b --orcamento 1 --seeds 0   # piso (b) para a curva (também 20; e 5 com seeds 0 1 2)
+.venv/bin/python -m pa3.analise_aluno            # curva_orcamento.csv + figuras da Etapa 2
+```
+
+Tudo de uma vez (Etapas 1 e 2, ~3 h no M4 Pro): `bash scripts/run_all.sh`.
+
 ## Estrutura do pacote de dados (inspecionada)
 
 ```

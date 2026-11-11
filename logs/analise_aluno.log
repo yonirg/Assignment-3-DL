@@ -1,0 +1,131 @@
+/Users/yoni.rg/repos/PA3 - DL/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:1447: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  check_classification_targets(y)
+{
+ "conferencia_professor": {
+  "zs_recalculado": 0.37460054948464744,
+  "zs_registrado": 0.37460054948464744,
+  "mel1_recalculado": 0.38010067917020296,
+  "mel5_recalculado": 0.5379335798236556,
+  "mel20_recalculado": 0.6646177437680464,
+  "mel1_registrado": 0.38010067917020296,
+  "mel5_registrado": 0.5379335798236556,
+  "mel20_registrado": 0.6646177437680464
+ },
+ "reprodutibilidade_piso_r5": [
+  {
+   "seed": 0,
+   "f1_val_etapa1": 0.41466944752432705,
+   "f1_val_rerun": 0.41466944752432705,
+   "test_etapa1": 0.45196692685469353,
+   "test_rerun": 0.45196692685469353
+  },
+  {
+   "seed": 1,
+   "f1_val_etapa1": 0.37309219664353016,
+   "f1_val_rerun": 0.37309219664353016,
+   "test_etapa1": 0.42522940546593413,
+   "test_rerun": 0.42522940546593413
+  },
+  {
+   "seed": 2,
+   "f1_val_etapa1": 0.41922163477494834,
+   "f1_val_rerun": 0.41922163477494834,
+   "test_etapa1": 0.44077679364882916,
+   "test_rerun": 0.44077679364882916
+  }
+ ],
+ "curva": {
+  "piso_b_resnet18": {
+   "1": {
+    "f1_media": 0.235353561934497,
+    "f1_desvio": 0.0,
+    "acc_media": 0.25030826140567203,
+    "acc_desvio": 0.0,
+    "n": 1
+   },
+   "5": {
+    "f1_media": 0.4393243753231523,
+    "f1_desvio": 0.010963755492474987,
+    "acc_media": 0.45951500205507606,
+    "acc_desvio": 0.01801916170717878,
+    "n": 3
+   },
+   "20": {
+    "f1_media": 0.6247319169794294,
+    "f1_desvio": 0.0,
+    "acc_media": 0.6683107274969173,
+    "acc_desvio": 0.0,
+    "n": 1
+   }
+  },
+  "aluno_B": {
+   "1": {
+    "f1_media": 0.4167321903278254,
+    "f1_desvio": 0.0,
+    "acc_media": 0.5228113440197287,
+    "acc_desvio": 0.0,
+    "n": 1
+   },
+   "5": {
+    "f1_media": 0.48014160228659114,
+    "f1_desvio": 0.01731197700467254,
+    "acc_media": 0.5602137279079326,
+    "acc_desvio": 0.012787792179288174,
+    "n": 3
+   },
+   "20": {
+    "f1_media": 0.5718725249711897,
+    "f1_desvio": 0.0,
+    "acc_media": 0.6078914919852034,
+    "acc_desvio": 0.0,
+    "n": 1
+   }
+  },
+  "professor_zero_shot": {
+   "1": {
+    "f1_media": 0.37460054948464744,
+    "f1_desvio": 0.0,
+    "acc_media": 0.4118372379778052,
+    "acc_desvio": 0.0,
+    "n": 1
+   },
+   "5": {
+    "f1_media": 0.37460054948464744,
+    "f1_desvio": 0.0,
+    "acc_media": 0.4118372379778052,
+    "acc_desvio": 0.0,
+    "n": 1
+   },
+   "20": {
+    "f1_media": 0.37460054948464744,
+    "f1_desvio": 0.0,
+    "acc_media": 0.4118372379778052,
+    "acc_desvio": 0.0,
+    "n": 1
+   }
+  },
+  "professor_melhorado": {
+   "1": {
+    "f1_media": 0.38010067917020296,
+    "f1_desvio": 0.0,
+    "acc_media": 0.41800246609124536,
+    "acc_desvio": 0.0,
+    "n": 1
+   },
+   "5": {
+    "f1_media": 0.5379335798236556,
+    "f1_desvio": 0.0,
+    "acc_media": 0.5770653514180024,
+    "acc_desvio": 0.0,
+    "n": 1
+   },
+   "20": {
+    "f1_media": 0.6646177437680464,
+    "f1_desvio": 0.0,
+    "acc_media": 0.6942046855733662,
+    "acc_desvio": 0.0,
+    "n": 1
+   }
+  }
+ }
+}

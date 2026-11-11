@@ -1,0 +1,26 @@
+/Users/yoni.rg/repos/PA3 - DL/pa3/train_sup.py:66: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:214.)
+  yva_t = torch.from_numpy(yva)
+  [resnet18 s0] ep   1 perda_tr 3.005 acc_tr 0.11 perda_val 2.692 f1_val 0.211
+  [resnet18 s0] ep  10 perda_tr 0.131 acc_tr 0.97 perda_val 2.311 f1_val 0.346
+  [resnet18 s0] ep  20 perda_tr 0.043 acc_tr 0.99 perda_val 2.188 f1_val 0.354
+  [resnet18 s0] ep  30 perda_tr 0.040 acc_tr 0.99 perda_val 2.251 f1_val 0.334
+  [resnet18 s0] ep  40 perda_tr 0.033 acc_tr 0.99 perda_val 2.269 f1_val 0.391
+  [resnet18 s0] ep  50 perda_tr 0.025 acc_tr 0.99 perda_val 2.252 f1_val 0.393
+  [resnet18 s0] ep  60 perda_tr 0.022 acc_tr 1.00 perda_val 2.224 f1_val 0.389
+{'modelo': 'resnet18', 'seed': 0, 'epoca_escolhida': 42, 'epoca_min_perda_val': 20, 'f1_val': 0.41466944752432705, 'acc_val': 0.39603960396039606, 'test_f1_macro': 0.45196692685469353, 'test_acuracia': 0.4784217016029593, 'n_parametros': 11187285, 'segundos': 48.225526094436646}
+  [resnet18 s1] ep   1 perda_tr 3.136 acc_tr 0.08 perda_val 2.626 f1_val 0.246
+  [resnet18 s1] ep  10 perda_tr 0.189 acc_tr 0.97 perda_val 2.237 f1_val 0.345
+  [resnet18 s1] ep  20 perda_tr 0.037 acc_tr 0.99 perda_val 2.508 f1_val 0.344
+  [resnet18 s1] ep  30 perda_tr 0.055 acc_tr 0.99 perda_val 2.473 f1_val 0.343
+  [resnet18 s1] ep  40 perda_tr 0.032 acc_tr 0.99 perda_val 2.542 f1_val 0.334
+  [resnet18 s1] ep  50 perda_tr 0.026 acc_tr 0.99 perda_val 2.370 f1_val 0.364
+  [resnet18 s1] ep  60 perda_tr 0.022 acc_tr 1.00 perda_val 2.366 f1_val 0.355
+{'modelo': 'resnet18', 'seed': 1, 'epoca_escolhida': 44, 'epoca_min_perda_val': 5, 'f1_val': 0.37309219664353016, 'acc_val': 0.38613861386138615, 'test_f1_macro': 0.42522940546593413, 'test_acuracia': 0.4352651048088779, 'n_parametros': 11187285, 'segundos': 43.507364988327026}
+  [resnet18 s2] ep   1 perda_tr 3.082 acc_tr 0.09 perda_val 2.825 f1_val 0.114
+  [resnet18 s2] ep  10 perda_tr 0.167 acc_tr 0.97 perda_val 2.281 f1_val 0.367
+  [resnet18 s2] ep  20 perda_tr 0.074 acc_tr 0.99 perda_val 2.363 f1_val 0.383
+  [resnet18 s2] ep  30 perda_tr 0.045 acc_tr 0.99 perda_val 2.566 f1_val 0.339
+  [resnet18 s2] ep  40 perda_tr 0.060 acc_tr 0.98 perda_val 2.620 f1_val 0.347
+  [resnet18 s2] ep  50 perda_tr 0.054 acc_tr 0.98 perda_val 2.573 f1_val 0.357
+  [resnet18 s2] ep  60 perda_tr 0.026 acc_tr 0.99 perda_val 2.544 f1_val 0.373
+{'modelo': 'resnet18', 'seed': 2, 'epoca_escolhida': 7, 'epoca_min_perda_val': 6, 'f1_val': 0.41922163477494834, 'acc_val': 0.42574257425742573, 'test_f1_macro': 0.44077679364882916, 'test_acuracia': 0.4648581997533909, 'n_parametros': 11187285, 'segundos': 43.18802309036255}

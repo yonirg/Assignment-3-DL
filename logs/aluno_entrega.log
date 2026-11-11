@@ -1,0 +1,1 @@
+{'tag': 'abl_B_tau0.5_r5_s0', 'n_parametros': 11187285, 'test_cpu': {'f1_macro': 0.46985640170206994, 'acuracia': 0.5511713933415536, 'n_classes_na_media': 21}, 'test_registrado': 0.46985640170206994, 'tamanho_MB': 44.828043}

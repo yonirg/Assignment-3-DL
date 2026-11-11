@@ -3,6 +3,7 @@
 Modos:
   python -m pa3.train_sup resolucao            # (b) ResNet-18 em 224 e 320, seeds 0-2, escolha no VAL
   python -m pa3.train_sup piso --res 224       # (a) CNN do zero e (b) ResNet-18 na resolução fixada
+  python -m pa3.train_sup piso_b --orcamento K --seeds 0 [1 2]   # só (b), para a curva de orçamento
   python -m pa3.train_sup throughput           # tempo de uma época no train inteiro (planejamento da Etapa 2)
 
 Regras: a época é escolhida pelo F1 macro no val (desempate: menor perda de val). O test_public só é
@@ -134,14 +135,18 @@ def modo_resolucao(orcamento: int, seeds=(0, 1, 2)):
     print("resolução escolhida:", saida["res_escolhida"])
 
 
-def modo_piso(res: int, orcamento: int, seeds=(0, 1, 2)):
+def modo_piso(res: int, orcamento: int, seeds=(0, 1, 2), modelos=("cnn", "resnet18")):
+    """Com os dois modelos grava results/piso_r{K}.json e as figuras (Etapa 1). Só com resnet18
+    (Etapa 2, curva de orçamento) grava results/piso_b_r{K}.json, sem figuras, e salva os logits de
+    teste de todas as seeds (para a quebra por classe)."""
+    so_b = tuple(modelos) == ("resnet18",)
     device = dispositivo()
     nomes = data.classes()
     Xtr, ytr, _ = data.conjunto_rotulado(f"rotulos_{orcamento}", res)
     Xva, yva, _ = data.conjunto_rotulado("val", res)
     Xte, yte, ids_te = data.conjunto_rotulado("test_public", res)
     saida = {"orcamento": orcamento, "res": res, "hp": HP, "runs": []}
-    for nome in ("cnn", "resnet18"):
+    for nome in modelos:
         for s in seeds:
             t0 = time.time()
             model, hist, ep, ep_min = treina(nome, Xtr, ytr, Xva, yva, s, device)
@@ -156,7 +161,11 @@ def modo_piso(res: int, orcamento: int, seeds=(0, 1, 2)):
                    "hist": hist}
             saida["runs"].append(run)
             print({k: v for k, v in run.items() if k != "hist"}, flush=True)
-            if nome == "resnet18" and s == 0:
+            if so_b:
+                (RES_DIR / "preds").mkdir(parents=True, exist_ok=True)
+                np.save(RES_DIR / "preds" / f"piso_b_r{orcamento}_s{s}_test_logits.npy", lt)
+                run["f1_por_classe_test"] = dict(zip(nomes, metrics.f1_por_classe(yte, pt).round(4).tolist()))
+            elif nome == "resnet18" and s == 0:
                 cm = metrics.confusao(yte, pt)
                 run["confusao_test"] = cm.tolist()
                 run["f1_por_classe_test"] = dict(zip(nomes, metrics.f1_por_classe(yte, pt).round(4).tolist()))
@@ -167,13 +176,13 @@ def modo_piso(res: int, orcamento: int, seeds=(0, 1, 2)):
                                        "piso_curva.png")
                 (RES_DIR / "preds").mkdir(parents=True, exist_ok=True)
                 np.save(RES_DIR / "preds" / f"piso_b_r{orcamento}_s0_test_logits.npy", lt)
-    for nome in ("cnn", "resnet18"):
+    for nome in modelos:
         rs = [r for r in saida["runs"] if r["modelo"] == nome]
         saida[f"{nome}_test_f1_media"] = float(np.mean([r["test_f1_macro"] for r in rs]))
         saida[f"{nome}_test_f1_desvio"] = float(np.std([r["test_f1_macro"] for r in rs]))
         saida[f"{nome}_test_acc_media"] = float(np.mean([r["test_acuracia"] for r in rs]))
         saida[f"{nome}_test_acc_desvio"] = float(np.std([r["test_acuracia"] for r in rs]))
-    _salva_json(saida, f"piso_r{orcamento}.json")
+    _salva_json(saida, f"piso_b_r{orcamento}.json" if so_b else f"piso_r{orcamento}.json")
 
 
 def modo_throughput(bs: int = 64, passos: int = 30):
@@ -219,7 +228,8 @@ def modo_throughput(bs: int = 64, passos: int = 30):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("modo", choices=["resolucao", "piso", "throughput"])
+    ap.add_argument("modo", choices=["resolucao", "piso", "piso_b", "throughput"])
+    ap.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2])
     ap.add_argument("--res", type=int, default=224)
     ap.add_argument("--orcamento", type=int, default=5)
     a = ap.parse_args()
@@ -227,6 +237,8 @@ def main():
         modo_resolucao(a.orcamento)
     elif a.modo == "piso":
         modo_piso(a.res, a.orcamento)
+    elif a.modo == "piso_b":
+        modo_piso(a.res, a.orcamento, tuple(a.seeds), modelos=("resnet18",))
     else:
         modo_throughput()
 

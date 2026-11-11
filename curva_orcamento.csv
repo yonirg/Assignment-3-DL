@@ -1,0 +1,17 @@
+metodo,orcamento,seed,f1_macro,acuracia
+piso_b_resnet18,1,0,0.2354,0.2503
+piso_b_resnet18,5,0,0.4520,0.4784
+piso_b_resnet18,5,1,0.4252,0.4353
+piso_b_resnet18,5,2,0.4408,0.4649
+piso_b_resnet18,20,0,0.6247,0.6683
+aluno_B,1,0,0.4167,0.5228
+aluno_B,5,0,0.4699,0.5512
+aluno_B,5,1,0.4660,0.5512
+aluno_B,5,2,0.5045,0.5783
+aluno_B,20,0,0.5719,0.6079
+professor_zero_shot,1,,0.3746,0.4118
+professor_zero_shot,5,,0.3746,0.4118
+professor_zero_shot,20,,0.3746,0.4118
+professor_melhorado,1,,0.3801,0.4180
+professor_melhorado,5,,0.5379,0.5771
+professor_melhorado,20,,0.6646,0.6942
