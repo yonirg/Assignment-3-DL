@@ -1,0 +1,15 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+bioclip recorte {'escala_logit': 100.00000762939453, 'acc_zs_rotulos5': 0.3333333333333333, 'f1_zs_rotulos5': 0.33184104255532826, 'test_f1_macro': 0.3099008039966237, 'test_acuracia': 0.34895191122071517}
+bioclip achatada {'escala_logit': 100.00000762939453, 'acc_zs_rotulos5': 0.3238095238095238, 'f1_zs_rotulos5': 0.29655133226561803, 'test_f1_macro': 0.37359689051299266, 'test_acuracia': 0.41060419235511714}
+/Users/yoni.rg/repos/PA3 - DL/.venv/lib/python3.12/site-packages/open_clip/factory.py:555: UserWarning: QuickGELU mismatch between final model config (quick_gelu=False) and pretrained tag 'openai' (quick_gelu=True).
+  warnings.warn(
+clip_b16 recorte {'escala_logit': 100.00000762939453, 'acc_zs_rotulos5': 0.42857142857142855, 'f1_zs_rotulos5': 0.36703946535879306, 'test_f1_macro': 0.37460054948464744, 'test_acuracia': 0.4118372379778052}
+clip_b16 achatada {'escala_logit': 100.00000762939453, 'acc_zs_rotulos5': 0.4, 'f1_zs_rotulos5': 0.3584382237743582, 'test_f1_macro': 0.33071198384780975, 'test_acuracia': 0.3810110974106042}
+professor escolhido: clip_b16/recorte
+/Users/yoni.rg/repos/PA3 - DL/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:1447: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  check_classification_targets(y)
+/Users/yoni.rg/repos/PA3 - DL/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:1447: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  check_classification_targets(y)
+melhorado 1 {'alfa': 0.5, 'C': 1.0, 'criterio': 'orçamento 1: sem CV possível; valores a priori'} {'f1_macro': 0.38010067917020296, 'acuracia': 0.41800246609124536}
+melhorado 5 {'alfa': np.float64(0.3), 'C': 100.0, 'f1_cv': 0.4662094519237377, 'acc_cv': 0.4857142857142857, 'criterio': 'CV 5 dobras (j-ésimo rótulo de cada classe); maior F1 macro, desempate menor log-loss'} {'f1_macro': 0.5379335798236556, 'acuracia': 0.5770653514180024}
+melhorado 20 {'alfa': np.float64(0.1), 'C': 100.0, 'f1_cv': 0.6515538414001489, 'acc_cv': 0.6523809523809524, 'criterio': 'CV 20 dobras (j-ésimo rótulo de cada classe); maior F1 macro, desempate menor log-loss'} {'f1_macro': 0.6646177437680464, 'acuracia': 0.6942046855733662}

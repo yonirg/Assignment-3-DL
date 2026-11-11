@@ -1,0 +1,77 @@
+{
+  "orcamento": 5,
+  "hp": {
+    "lr": 0.0003,
+    "wd": 0.05,
+    "epocas": 60,
+    "bs": 32
+  },
+  "runs": [
+    {
+      "res": 224,
+      "seed": 0,
+      "epoca_escolhida": 42,
+      "f1_val": 0.41466944752432705,
+      "acc_val": 0.39603960396039606,
+      "perda_val_min": 2.1882128715515137,
+      "epoca_min_perda_val": 20,
+      "segundos": 50.54601502418518
+    },
+    {
+      "res": 224,
+      "seed": 1,
+      "epoca_escolhida": 44,
+      "f1_val": 0.37309219664353016,
+      "acc_val": 0.38613861386138615,
+      "perda_val_min": 2.129443407058716,
+      "epoca_min_perda_val": 5,
+      "segundos": 39.57575607299805
+    },
+    {
+      "res": 224,
+      "seed": 2,
+      "epoca_escolhida": 7,
+      "f1_val": 0.41922163477494834,
+      "acc_val": 0.42574257425742573,
+      "perda_val_min": 2.128990650177002,
+      "epoca_min_perda_val": 6,
+      "segundos": 48.691720962524414
+    },
+    {
+      "res": 320,
+      "seed": 0,
+      "epoca_escolhida": 58,
+      "f1_val": 0.3922344486345049,
+      "acc_val": 0.3811881188118812,
+      "perda_val_min": 2.1970810890197754,
+      "epoca_min_perda_val": 11,
+      "segundos": 214.36934304237366
+    },
+    {
+      "res": 320,
+      "seed": 1,
+      "epoca_escolhida": 36,
+      "f1_val": 0.3960108418699749,
+      "acc_val": 0.39603960396039606,
+      "perda_val_min": 2.1009106636047363,
+      "epoca_min_perda_val": 4,
+      "segundos": 219.70924377441406
+    },
+    {
+      "res": 320,
+      "seed": 2,
+      "epoca_escolhida": 6,
+      "f1_val": 0.4147672427746257,
+      "acc_val": 0.41089108910891087,
+      "perda_val_min": 2.1465864181518555,
+      "epoca_min_perda_val": 6,
+      "segundos": 87.56891584396362
+    }
+  ],
+  "f1_val_media_224": 0.4023277596476018,
+  "f1_val_desvio_224": 0.020756030614658538,
+  "f1_val_media_320": 0.4010041777597018,
+  "f1_val_desvio_320": 0.009853316038132926,
+  "res_escolhida": 224,
+  "criterio": "maior F1 macro médio no val (3 seeds) na época escolhida no val; empate -> 224 (mais barata)"
+}

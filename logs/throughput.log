@@ -1,0 +1,2 @@
+224 {'seg_por_passo': 0.2985038677851359, 'img_por_seg_treino': 214.40258203309924, 'seg_por_epoca_train_inteiro': 30.340119686598577, 'seg_por_img_inferencia_mps': 0.0010230147745460272}
+320 {'seg_por_passo': 0.6087937990824381, 'img_por_seg_treino': 105.1259064998026, 'seg_por_epoca_train_inteiro': 61.87818223486344, 'seg_por_img_inferencia_mps': 0.002887505106627941}
