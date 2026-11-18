@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Reproduz todos os experimentos do PA3 (Etapas 1 e 2), um treino por vez na GPU (MPS).
+# Reproduz todos os experimentos do PA3 (Etapas 1, 2 e 3), um treino por vez na GPU (MPS).
 # Uso: bash scripts/run_all.sh            (da raiz do repositório; dados em data/pa3_dados)
 # Tempo total aproximado no M4 Pro: ~3 h (Etapa 1 ~40 min, Etapa 2 ~2 h).
 set -euo pipefail
@@ -23,3 +23,7 @@ for K in 1 20; do
 done
 $PY -u -m pa3.train_sup piso_b --orcamento 5 --seeds 0 1 2 2>&1 | tee logs/piso_b_r5.log  # refaz (b) guardando logits por seed
 $PY -u -m pa3.analise_aluno            2>&1 | tee logs/analise_aluno.log    # curva_orcamento.csv + figuras
+
+# ---- Etapa 3: galeria da Parte 3 (CPU, ~1 min) e avaliação do modelo entregue
+$PY -u -m pa3.cam                      2>&1 | tee logs/galeria.log          # Grad-CAM, oclusão, tapar o animal
+bash scripts/eval.sh                   2>&1 | tee logs/eval.log             # predict.py no test_public + F1

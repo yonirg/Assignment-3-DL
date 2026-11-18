@@ -30,11 +30,11 @@ pa3/            pacote: data.py, models.py, train_sup.py, teacher.py, train_stud
 scripts/        run_all.sh (treina tudo), eval.sh (avalia o modelo entregue)
 predict.py      entregável
 weights/        aluno_final.pt (modelo entregue)
-results/        csv + json de cada experimento; figs/ com os PNG
+results/        csv + json de cada experimento; figs/ com os PNG (galeria/ = um PNG por caso da Parte 3)
 cache/          embeddings e logits do professor (.npy) — fora do git
 data/           pa3_dados descompactado — fora do git
 docs/           enunciado.txt
-apresentacao/   PA3_apresentacao.pptx (com as falas nas notas)
+apresentacao/   PA3_apresentacao.pptx (com as falas nas notas) + gera_apresentacao.py (gera o deck)
 curva_orcamento.csv, README.md, AI_LOG.md, RESULTADOS.md
 ```
 

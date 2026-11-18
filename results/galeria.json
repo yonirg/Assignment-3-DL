@@ -1,0 +1,415 @@
+{
+  "regra": "dos casos (declarada antes de olhar as figuras; nada escolhido a dedo):\n- 3 ERROS: os erros de MAIOR confiança, percorridos em ordem decrescente de confiança, aceitando um\n  caso só se a classe verdadeira E a classe prevista ainda não apareceram entre os já aceitos\n  (para não repetir o mesmo par/atalho três vezes).\n- 5 ACERTOS: sorteio com semente fixa (0) entre os acertos, aceitando um caso só se a classe\n  verdadeira ainda não apareceu, até ter 3 diurnos e 2 noturnos (flag `data.flag_noite`). O sorteio\n  (e não \"os mais confiantes\") é para os acertos serem representativos, não os mais fáceis.",
+  "caixas": "desenhadas à mão olhando as figuras, só para o teste de tapar o animal",
+  "test_public": {
+    "f1_macro": 0.46985640170206994,
+    "acuracia": 0.5511713933415536,
+    "n_classes_na_media": 21
+  },
+  "n_erros": 364,
+  "n_acertos": 447,
+  "erros": [
+    {
+      "k": 1,
+      "image_id": "046de929caa4702b",
+      "verdadeira": "striped_skunk",
+      "prevista": "eastern_fox_squirrel",
+      "confianca": 0.9910759925842285,
+      "noite": true,
+      "p_verdadeira": 0.0008211004897020757,
+      "top3": [
+        [
+          "eastern_fox_squirrel",
+          0.9910759925842285
+        ],
+        [
+          "grey_fox",
+          0.0042351605370640755
+        ],
+        [
+          "virginia_opossum",
+          0.0016423168126493692
+        ]
+      ],
+      "cam_caixa_ge_0.5_xyxy": [
+        61,
+        67,
+        172,
+        172
+      ],
+      "cam_frac_area_ge_0.5": 0.1863639987244898,
+      "oclusao_pico_xy": [
+        112,
+        128
+      ],
+      "oclusao_queda_max": 0.7070568336380852,
+      "tapa": {
+        "caixa_xyxy": [
+          70,
+          110,
+          145,
+          170
+        ],
+        "area_px": 4500,
+        "p_original": 0.9910761117935181,
+        "p_animal_tapado": 0.16610202193260193,
+        "p_so_animal": 0.2779339849948883,
+        "prevista_animal_tapado": "white_tailed_deer",
+        "prevista_so_animal": "eastern_fox_squirrel"
+      },
+      "figura": "results/figs/galeria/erro_1_046de929caa4702b.png"
+    },
+    {
+      "k": 2,
+      "image_id": "ece8e099eb242e5d",
+      "verdadeira": "dog",
+      "prevista": "chicken",
+      "confianca": 0.9625301361083984,
+      "noite": true,
+      "p_verdadeira": 0.00045710886479355395,
+      "top3": [
+        [
+          "chicken",
+          0.9625301361083984
+        ],
+        [
+          "bobcat",
+          0.01740255206823349
+        ],
+        [
+          "american_black_bear",
+          0.007573199924081564
+        ]
+      ],
+      "cam_caixa_ge_0.5_xyxy": [
+        26,
+        29,
+        223,
+        204
+      ],
+      "cam_frac_area_ge_0.5": 0.4917689732142857,
+      "oclusao_pico_xy": [
+        128,
+        128
+      ],
+      "oclusao_queda_max": 0.12326463063557942,
+      "tapa": {
+        "caixa_xyxy": [
+          193,
+          143,
+          224,
+          190
+        ],
+        "area_px": 1457,
+        "p_original": 0.9625301361083984,
+        "p_animal_tapado": 0.9466999769210815,
+        "p_so_animal": 0.024671560153365135,
+        "prevista_animal_tapado": "chicken",
+        "prevista_so_animal": "coyote"
+      },
+      "figura": "results/figs/galeria/erro_2_ece8e099eb242e5d.png"
+    },
+    {
+      "k": 3,
+      "image_id": "6353c192fb1adc35",
+      "verdadeira": "domestic_cat",
+      "prevista": "bobcat",
+      "confianca": 0.9534849524497986,
+      "noite": true,
+      "p_verdadeira": 0.000270728807663545,
+      "top3": [
+        [
+          "bobcat",
+          0.9534849524497986
+        ],
+        [
+          "american_black_bear",
+          0.01565912365913391
+        ],
+        [
+          "grey_fox",
+          0.013863039202988148
+        ]
+      ],
+      "cam_caixa_ge_0.5_xyxy": [
+        66,
+        65,
+        185,
+        170
+      ],
+      "cam_frac_area_ge_0.5": 0.19276147959183673,
+      "oclusao_pico_xy": [
+        112,
+        96
+      ],
+      "oclusao_queda_max": 0.2310236030154758,
+      "tapa": {
+        "caixa_xyxy": [
+          104,
+          104,
+          134,
+          128
+        ],
+        "area_px": 720,
+        "p_original": 0.9534847140312195,
+        "p_animal_tapado": 0.9225013256072998,
+        "p_so_animal": 0.29091641306877136,
+        "prevista_animal_tapado": "bobcat",
+        "prevista_so_animal": "coyote"
+      },
+      "figura": "results/figs/galeria/erro_3_6353c192fb1adc35.png"
+    }
+  ],
+  "acertos": [
+    {
+      "k": 1,
+      "image_id": "fbbf64cb17e8330d",
+      "verdadeira": "coyote",
+      "prevista": "coyote",
+      "confianca": 0.45700350403785706,
+      "noite": true,
+      "p_verdadeira": 0.45700350403785706,
+      "top3": [
+        [
+          "coyote",
+          0.45700350403785706
+        ],
+        [
+          "bobcat",
+          0.31988629698753357
+        ],
+        [
+          "northern_raccoon",
+          0.06743941456079483
+        ]
+      ],
+      "cam_caixa_ge_0.5_xyxy": [
+        0,
+        87,
+        181,
+        200
+      ],
+      "cam_frac_area_ge_0.5": 0.2975526147959184,
+      "oclusao_pico_xy": [
+        64,
+        144
+      ],
+      "oclusao_queda_max": 0.3082495265536838,
+      "tapa": {
+        "caixa_xyxy": [
+          0,
+          105,
+          22,
+          142
+        ],
+        "area_px": 814,
+        "p_original": 0.45700424909591675,
+        "p_animal_tapado": 0.2829650044441223,
+        "p_so_animal": 0.14671653509140015,
+        "prevista_animal_tapado": "bobcat",
+        "prevista_so_animal": "horse"
+      },
+      "figura": "results/figs/galeria/acerto_1_fbbf64cb17e8330d.png"
+    },
+    {
+      "k": 2,
+      "image_id": "8ba773a0aeb9cb8b",
+      "verdadeira": "american_crow",
+      "prevista": "american_crow",
+      "confianca": 0.9684102535247803,
+      "noite": false,
+      "p_verdadeira": 0.9684102535247803,
+      "top3": [
+        [
+          "american_crow",
+          0.9684102535247803
+        ],
+        [
+          "wild_turkey",
+          0.025220364332199097
+        ],
+        [
+          "american_black_bear",
+          0.003615841967985034
+        ]
+      ],
+      "cam_caixa_ge_0.5_xyxy": [
+        0,
+        56,
+        129,
+        161
+      ],
+      "cam_frac_area_ge_0.5": 0.20958227040816327,
+      "oclusao_pico_xy": [
+        48,
+        112
+      ],
+      "oclusao_queda_max": 0.4628613326284621,
+      "tapa": {
+        "caixa_xyxy": [
+          30,
+          102,
+          55,
+          120
+        ],
+        "area_px": 450,
+        "p_original": 0.9684099555015564,
+        "p_animal_tapado": 0.6110766530036926,
+        "p_so_animal": 0.017025772482156754,
+        "prevista_animal_tapado": "american_crow",
+        "prevista_so_animal": "american_black_bear"
+      },
+      "figura": "results/figs/galeria/acerto_2_8ba773a0aeb9cb8b.png"
+    },
+    {
+      "k": 3,
+      "image_id": "2539e50f0cfcec84",
+      "verdadeira": "eastern_chipmunk",
+      "prevista": "eastern_chipmunk",
+      "confianca": 0.9546121954917908,
+      "noite": false,
+      "p_verdadeira": 0.9546121954917908,
+      "top3": [
+        [
+          "eastern_chipmunk",
+          0.9546121954917908
+        ],
+        [
+          "virginia_opossum",
+          0.04183654859662056
+        ],
+        [
+          "eastern_gray_squirrel",
+          0.0006098544108681381
+        ]
+      ],
+      "cam_caixa_ge_0.5_xyxy": [
+        37,
+        0,
+        192,
+        223
+      ],
+      "cam_frac_area_ge_0.5": 0.42012117346938777,
+      "oclusao_pico_xy": [
+        112,
+        144
+      ],
+      "oclusao_queda_max": 0.0694031450483534,
+      "tapa": {
+        "caixa_xyxy": [
+          56,
+          160,
+          74,
+          180
+        ],
+        "area_px": 360,
+        "p_original": 0.9546120166778564,
+        "p_animal_tapado": 0.9345205426216125,
+        "p_so_animal": 0.02310941368341446,
+        "prevista_animal_tapado": "eastern_chipmunk",
+        "prevista_so_animal": "bobcat"
+      },
+      "figura": "results/figs/galeria/acerto_3_2539e50f0cfcec84.png"
+    },
+    {
+      "k": 4,
+      "image_id": "a6f1f0fd730dbbe7",
+      "verdadeira": "virginia_opossum",
+      "prevista": "virginia_opossum",
+      "confianca": 0.9476920366287231,
+      "noite": true,
+      "p_verdadeira": 0.9476920366287231,
+      "top3": [
+        [
+          "virginia_opossum",
+          0.9476920366287231
+        ],
+        [
+          "striped_skunk",
+          0.007278298027813435
+        ],
+        [
+          "american_black_bear",
+          0.0070470222271978855
+        ]
+      ],
+      "cam_caixa_ge_0.5_xyxy": [
+        35,
+        37,
+        157,
+        167
+      ],
+      "cam_frac_area_ge_0.5": 0.24366230867346939,
+      "oclusao_pico_xy": [
+        96,
+        80
+      ],
+      "oclusao_queda_max": 0.33795029587215847,
+      "tapa": {
+        "caixa_xyxy": [
+          38,
+          132,
+          108,
+          162
+        ],
+        "area_px": 2100,
+        "p_original": 0.9476922750473022,
+        "p_animal_tapado": 0.8286280632019043,
+        "p_so_animal": 0.06573016196489334,
+        "prevista_animal_tapado": "virginia_opossum",
+        "prevista_so_animal": "coyote"
+      },
+      "figura": "results/figs/galeria/acerto_4_a6f1f0fd730dbbe7.png"
+    },
+    {
+      "k": 5,
+      "image_id": "2475c79619133dfb",
+      "verdadeira": "chicken",
+      "prevista": "chicken",
+      "confianca": 0.945605456829071,
+      "noite": false,
+      "p_verdadeira": 0.945605456829071,
+      "top3": [
+        [
+          "chicken",
+          0.945605456829071
+        ],
+        [
+          "wild_turkey",
+          0.022667428478598595
+        ],
+        [
+          "eastern_cottontail",
+          0.005826475564390421
+        ]
+      ],
+      "cam_caixa_ge_0.5_xyxy": [
+        44,
+        117,
+        160,
+        223
+      ],
+      "cam_frac_area_ge_0.5": 0.1993781887755102,
+      "oclusao_pico_xy": [
+        96,
+        176
+      ],
+      "oclusao_queda_max": 0.21227049165301853,
+      "tapa": {
+        "caixa_xyxy": [
+          82,
+          160,
+          118,
+          224
+        ],
+        "area_px": 2304,
+        "p_original": 0.9456056952476501,
+        "p_animal_tapado": 0.9096372127532959,
+        "p_so_animal": 0.16112177073955536,
+        "prevista_animal_tapado": "chicken",
+        "prevista_so_animal": "coyote"
+      },
+      "figura": "results/figs/galeria/acerto_5_2475c79619133dfb.png"
+    }
+  ]
+}

@@ -334,3 +334,102 @@ média 0,480); como a escolha é no val, isso fica assim.
 - Previsões do professor no test_public recalculadas do cache batem com `professor.json`
   (zs 0,3746; melhorado 0,3801 / 0,5379 / 0,6646).
 - F1 recalculado dos logits salvos (`results/preds/`) bate com o registrado para as 3 seeds do aluno e do piso.
+
+## Etapa 3 — Galeria de falhas e atalhos (Parte 3) e entregáveis
+
+### Galeria (modelo entregue, test_public)
+
+Origem: `results/galeria.json` (log `logs/galeria.log`; comando `python -m pa3.cam`). Figuras:
+`results/figs/galeria_erros.png`, `results/figs/galeria_acertos.png` (versões compactas para a
+apresentação: `*_slide.png`) e um PNG por caso em `results/figs/galeria/`. O test_public aqui é só diagnóstico; nada foi escolhido a partir dele.
+O script reconfere o modelo antes: F1 macro 0,4699, acurácia 0,5512 (364 erros, 447 acertos).
+
+**Regra de seleção (no código, antes de olhar as figuras).** Erros: os de maior confiança, em ordem
+decrescente, aceitando um caso só se a classe verdadeira e a prevista ainda não apareceram. Acertos:
+sorteio com semente 0 entre os acertos, classes distintas, até 3 coloridos (dia) e 2 sem cor
+(noite/IR). Sorteio, e não "os mais confiantes", para os acertos serem representativos.
+
+**Três evidências por caso.** (1) Grad-CAM na `layer4` para a classe prevista (implementação própria;
+mapa 7×7, cada célula cobre 32×32 px a 224). (2) Oclusão: quadrado cinza de 48 px, passo 16, queda
+da probabilidade da classe prevista. (3) "Tapar o animal": depois de olhar as figuras, desenhei
+à mão uma caixa aproximada em volta do animal (`CAIXAS` em `pa3/cam.py`, só diagnóstico, não entra em
+nenhuma previsão) e medi p(prevista) com o animal tapado de cinza e com tudo menos o animal tapado.
+Atenção: "só o animal" coloca o modelo numa imagem quase toda cinza, fora da distribuição, então
+valores baixos ali dizem pouco; o teste que importa é "animal tapado". Tamanhos abaixo = caixa a 224 px
+(a imagem é achatada de 512×~367 para 224×224, então a escala é ~0,44 na horizontal e ~0,61 na vertical).
+
+| caso | imagem | verdadeira → prevista (conf.) | cor | animal (px a 224) | Grad-CAM acende em | oclusão (queda máx.) | p(prevista): original → animal tapado |
+|---|---|---|---|---|---|---|---|
+| erro 1 | `046de929caa4702b` | striped_skunk → eastern_fox_squirrel (0,99) | sem cor | ~75×60, centro, borrado | no gambá | no gambá (0,71) | 0,99 → **0,17** (vira white_tailed_deer) |
+| erro 2 | `ece8e099eb242e5d` | dog → chicken (0,96) | sem cor, mas é dia (IR diurno, céu claro) | ~31×47, cortado na borda direita, atrás de uma caixa de compostagem | na caixa de compostagem | difusa, na caixa (0,12) | 0,96 → **0,95** |
+| erro 3 | `6353c192fb1adc35` | domestic_cat → bobcat (0,95) | sem cor (noite, postes ao fundo) | ~30×24, centro | no gato | acima do gato e no chão abaixo (0,23) | 0,95 → **0,92** |
+| acerto 1 | `fbbf64cb17e8330d` | coyote (0,46; bobcat 0,32) | sem cor | ~22×37, só a frente, cortado na borda esquerda | capim ~25 px à direita do animal | difusa em toda a metade esquerda (0,31) | 0,46 → **0,28** (vira bobcat) |
+| acerto 2 | `8ba773a0aeb9cb8b` | american_crow (0,97) | dia | ~25×18 | no corvo e nas árvores acima dele | no corvo (0,46) | 0,97 → **0,61** (continua crow) |
+| acerto 3 | `2539e50f0cfcec84` | eastern_chipmunk (0,95) | dia | ~18×20, junto à mangueira | no tambor de chuva, ~40 px à direita do animal | fraca, base do tambor (0,07) | 0,95 → **0,93** |
+| acerto 4 | `a6f1f0fd730dbbe7` | virginia_opossum (0,95) | sem cor (noite, postes acesos) | ~70×30, borrado | nas árvores e postes iluminados, acima do animal | nas árvores/postes (0,34) | 0,95 → **0,83** |
+| acerto 5 | `2475c79619133dfb` | chicken (0,95) | dia | ~36×64, em primeiro plano, cortada embaixo | na galinha e no canteiro atrás | na galinha (0,21) | 0,95 → **0,91** |
+
+**Diagnóstico de cada caso (escrito depois de abrir as figuras):**
+
+- *Erro 1 — gambá visto como esquilo-raposa, 99%.* Foto noturna em IR, gambá de ~75×60 px no centro,
+  com a cauda erguida e borrada. Os três sinais concordam: o modelo olhou para o animal (tapá-lo derruba
+  a confiança de 0,99 para 0,17). O erro é de leitura do animal, não de atalho: em IR, um corpo escuro
+  com cauda grande e peluda vira "esquilo". striped_skunk é uma das classes que mais perderam no aluno
+  (F1 0,37 no piso → 0,12 no aluno) e quase não recebe pseudo-rótulo: no train inteiro, o zero-shot
+  dá max p ≥ 0,5 para striped_skunk em só 23 imagens, contra 120 para eastern_fox_squirrel (contagem
+  feita a partir de `cache/prof_zs_train_probs.npy`, sobre as 6.505 imagens, sem descontar as 105 rotuladas).
+- *Erro 2 — cão visto como galinha, 96%.* Imagem sem cor mas diurna (a flag "noite/IR" mede ausência
+  de cor). O cão aparece só em parte, ~31×47 px na borda direita, atrás de uma caixa de compostagem que
+  ocupa 3/4 do quadro. Grad-CAM e oclusão acendem na caixa, e tapar o cão não muda nada (0,96 → 0,95).
+  Atalho de fundo: o modelo reconhece o cenário (quintal com a caixa e a cerca) e responde "galinha".
+  Não temos metadado de câmera para confirmar que esse cenário aparece com galinhas no train; é a
+  explicação mais compatível com o que a figura mostra.
+- *Erro 3 — gato visto como lince, 95%.* Noite, IR, gato de ~30×24 px no meio do quadro. O Grad-CAM
+  está em cima do gato, o que sugeriria "olhou o animal", mas tapar o gato quase não muda a previsão
+  (0,95 → 0,92) e a oclusão também acende no chão abaixo dele. Aqui o Grad-CAM engana: o mapa de 7×7
+  centrado no gato cobre ~100×100 px de chão e mato em volta, e a decisão se sustenta sem o animal.
+  É o erro herdado do professor (domestic_cat nunca é previsto no test_public, vira bobcat; no train só 3 imagens passam
+  no filtro como gato, contra 90 como bobcat; F1 do aluno em gato = 0 nas 3 seeds).
+- *Acerto 1 — coiote, 46%.* Noite, IR com névoa; só a parte da frente de um animal de ~22×37 px aparece
+  na borda esquerda. Confiança baixa (bobcat 0,32 em segundo). O Grad-CAM acende no capim ao lado do
+  animal, não sobre ele, e a oclusão é difusa em meia imagem. Tapar o animal tira a classe (vira bobcat),
+  então ele conta, mas o acerto é frágil. **Grad-CAM inconclusivo** neste caso.
+- *Acerto 2 — corvo, 97%.* Dia, gramado com árvores, corvo de ~25×18 px. Grad-CAM e oclusão apontam
+  para o corvo (com as árvores logo acima). Tapar o corvo baixa de 0,97 para 0,61, mas a previsão
+  continua "corvo": o animal pesa, e o cenário sozinho já sustenta a classe.
+- *Acerto 3 — tâmia, 95%.* Dia, tâmia minúscula (~18×20 px) junto à mangueira, à esquerda do tambor de
+  chuva. O Grad-CAM acende no tambor, a ~40 px do animal; a oclusão quase não muda nada (queda máxima
+  0,07) e tapar a tâmia mantém 0,93. Acerto pelo fundo: o modelo reconhece a cena (tambor, tijolo,
+  ar-condicionado), não o animal.
+- *Acerto 4 — gambá-norte-americano (opossum), 95%.* Noite com postes acesos; opossum borrado de ~70×30 px
+  embaixo à esquerda. Grad-CAM e oclusão acendem nas árvores e postes iluminados, acima do animal.
+  Tapar o opossum: 0,95 → 0,83. Acerto majoritariamente pelo fundo.
+- *Acerto 5 — galinha, 95%.* Dia, galinha branca de ~36×64 px em primeiro plano. Grad-CAM cobre a
+  galinha e o canteiro atrás; a oclusão acende na galinha. Mesmo assim, tapar a galinha mantém 0,91.
+  O mapa diz "animal", o teste de tapar diz "o fundo basta".
+
+**Animal ou fundo?** Nos 5 acertos sorteados, tapar o animal derruba a classe em 1 (coiote, que já
+tinha confiança baixa), baixa bastante mas mantém em 1 (corvo, 0,97 → 0,61) e quase não muda em 3
+(tâmia 0,93, galinha 0,91, opossum 0,83). Ou seja, na maioria dos acertos o modelo **acerta pelo
+fundo/cenário**, não pelo animal. O Grad-CAM sozinho daria uma resposta mais otimista (acende sobre o
+animal em corvo, galinha e, entre os erros, gato), porque o mapa 7×7 é grosso e cobre o animal e o
+entorno ao mesmo tempo; o teste de tapar o animal é o que separa as duas coisas. É coerente com o
+enunciado: o split separa câmera-noite, mas a mesma câmera aparece em noites diferentes no train e no
+test, e o aluno foi treinado em ~2.200 pseudo-rótulos concentrados em poucas classes. São 8 casos;
+servem para ilustrar o mecanismo, não para estimar a fração de acertos por atalho no test_public.
+
+### `predict.py` e avaliação
+
+Teste num shell novo (`env -i`, `HF_HUB_OFFLINE=1`), em CPU, com `bash scripts/eval.sh`
+(log `logs/eval.log`; CSV `results/preds_test_public.csv`):
+
+| item | valor |
+|---|---|
+| parâmetros impressos | 11.187.285 (≤ 12 M) |
+| tempo, 811 imagens do test_public, CPU (M4 Pro) | 12,6 s pelo script; 13,95 s de relógio (`time`), incluindo carregar torch e pesos |
+| F1 macro recalculado do CSV | **0,4699** |
+| acurácia recalculada do CSV | **0,5512** |
+
+Conferência extra: rodando `predict.py` com `socket` bloqueado (qualquer tentativa de conexão levanta
+erro), o CSV sai idêntico byte a byte. `predict.py` só lê `weights/aluno_final.pt` (state_dict +
+classes + resolução + normalização); não lê `data/` nem `cache/`.

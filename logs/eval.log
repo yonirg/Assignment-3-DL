@@ -1,0 +1,6 @@
+modelo: torchvision resnet18, fc 512->21 | parâmetros: 11187285 (≤ 12 M)
+811 imagens classificadas em 12.6 s (CPU) -> results/preds_test_public.csv
+real 13.95
+user 71.83
+sys 8.45
+test_public: 811 imagens | F1 macro 0.4699 | acurácia 0.5512
